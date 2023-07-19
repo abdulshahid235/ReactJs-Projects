@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  /* border-bottom: 1px solid black; */
+  height: 60px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  background-color: black;
+  color: whitesmoke;
+}
+
+.header > a {
+  padding: 0px 20px 0px 20px;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.image {
+  width: 300px;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100%; */
+  height: 75vh;
+}
+
+.home--content {
+  width: 500px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.footer {
+  background-color: black;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#li-icon,
+#git-icon {
+  height: 40px;
+  /* width: 60px; */
+  padding: 0px 20px 0px 20px;
+}
