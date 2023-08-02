@@ -1,6 +1,6 @@
 import git from "../images/github-logo.jpg";
 import li from "../images/Linkedin.png";
-import mail from "../images/Mail.png";
+// import mail from "../images/Mail.png";
 
 function Footer() {
   return (

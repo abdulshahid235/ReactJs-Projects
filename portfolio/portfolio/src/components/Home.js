@@ -3,7 +3,7 @@ import photo from "../images/pic.jpg";
 export default function Home() {
   return (
     <div className="home">
-      <img className="image" src={photo} alt="Your photo" />
+      <img className="image" src={photo} alt="shahid" />
       <div className="home--content">
         <h3>About Me:</h3>
         <p>

@@ -1,6 +1,15 @@
+body {
+  min-height: 400px;
+  margin-bottom: 100px;
+  clear: both;
+  /* font-family: "Kanit", sans-serif; */
+  font-family: "Poppins", sans-serif;
+}
+
 .header {
   display: flex;
-  font-family: "Kanit", sans-serif;
+  width: 100%;
+  /* font-family: "Kanit", sans-serif; */
   font-size: 20px;
   justify-content: center;
   align-items: center;
@@ -9,12 +18,15 @@
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
   background-color: black;
   color: whitesmoke;
+  position: fixed;
+  z-index: 9999;
 }
 
-.header > a {
+.header > p {
   padding: 0px 20px 0px 20px;
   text-decoration: none;
   color: whitesmoke;
+  cursor: pointer;
 }
 
 .image {
@@ -31,11 +43,57 @@
 
 .home--content {
   width: 500px;
-  font-family: "Kanit", sans-serif;
+  /* font-family: "Kanit", sans-serif; */
   font-size: 20px;
   margin-left: 10px;
 }
 
+.skillset {
+  width: 800px;
+  align-items: center;
+  margin: auto;
+  /* box-shadow: 0px 0px 5px rgb(176, 170, 170);
+  border-radius: 10px; */
+}
+
+.skillset > h1 {
+  text-align: center;
+}
+
+.skill-set-open {
+  grid-row: span 2;
+  /* grid-column: span 2; */
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  width: 800px;
+  justify-content: center;
+  grid-gap: 20px;
+}
+
+.skill-header {
+  display: flex;
+  /* gap: 20px; */
+  padding: 0px 20px 0px 20px;
+}
+
+.skill-name {
+  margin: 0;
+}
+
+.work-experience {
+  margin-top: 50px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.symbol {
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0px 0px 0px auto;
+}
 .footer {
   background-color: black;
   height: 60px;

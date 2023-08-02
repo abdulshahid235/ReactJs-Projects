@@ -1,18 +1,22 @@
+import { Link } from "react-scroll";
+
 function Header() {
   return (
     <div className="header">
-      <a href="" className="header--card">
-        Digital Card
-      </a>
-      <a href="" className="header--skills">
-        Skill Set
-      </a>
-      <a href="" className="header--workexp">
-        Work Experience
-      </a>
-      <a href="" className="header--reachout">
-        React me out!
-      </a>
+      <p className="header--card">Digital Card</p>
+
+      {/* <p className="header--skills">Skill Set</p> */}
+      <p>
+        <Link to="skills" smooth={true} duration={500} offset={-75}>
+          Skill Set
+        </Link>
+      </p>
+      <p>
+        <Link to="work-exp" smooth={true} duration={500} offset={-75}>
+          Work Experience
+        </Link>
+      </p>
+      <p className="header--reachout">React me out!</p>
     </div>
   );
 }
