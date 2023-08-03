@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../timeline.css";
 import { ReactComponent as WorkIcon } from "../images/work.svg";
 import { ReactComponent as SchoolIcon } from "../images/school.svg";
-import Modal from "./MoreInfo";
+
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -70,21 +70,26 @@ export default function WorkExperience() {
   let workIconStyles = { background: "#06D6A0" };
   let schoolIconStyles = { background: "#f9c74f" };
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // Initialize an array of booleans to track the open/close state for each timeline element
+  const [isInfoOpenArray, setIsInfoOpenArray] = useState(
+    timelineElements.map(() => false)
+  );
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  // Modify the handleOpenInfo function to accept an index parameter
+  function handleOpenInfo(index) {
+    // Create a copy of the current array
+    const newArray = [...isInfoOpenArray];
+    // Toggle the state for the corresponding element
+    newArray[index] = !newArray[index];
+    // Update the state with the new array
+    setIsInfoOpenArray(newArray);
+  }
 
   return (
     <div className="work-experience" id="work-exp">
       <h1 className="title">Work Experience</h1>
       <VerticalTimeline lineColor={"#ADD8E6"}>
-        {timelineElements.map((element) => {
+        {timelineElements.map((element, index) => {
           let isWorkIcon = element.icon === "work";
           let showButton =
             element.buttonText !== undefined &&
@@ -93,7 +98,7 @@ export default function WorkExperience() {
 
           return (
             <VerticalTimelineElement
-              key={element.key}
+              key={element.id}
               date={element.date}
               dateClassName="date"
               iconStyle={isWorkIcon ? workIconStyles : schoolIconStyles}
@@ -108,21 +113,23 @@ export default function WorkExperience() {
               <h5 className="vertical-timeline-element-subtitle">
                 {element.location}
               </h5>
-              {/* <p id="description">{element.description}</p> */}
+
+              {/* Use the individual state for each element */}
+              {isInfoOpenArray[index] && (
+                <p id="description">{element.description}</p>
+              )}
+
+              {/* Pass the index to the handleOpenInfo function */}
               {showButton && (
                 <button
                   className={`button ${
                     isWorkIcon ? "workButton" : "schoolButton"
                   }`}
-                  onClick={handleOpenModal}
+                  onClick={() => handleOpenInfo(index)}
                 >
-                  {element.buttonText}
+                  {isInfoOpenArray[index] ? "Close" : element.buttonText}
                 </button>
               )}
-
-              <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-                {element.description}
-              </Modal>
             </VerticalTimelineElement>
           );
         })}

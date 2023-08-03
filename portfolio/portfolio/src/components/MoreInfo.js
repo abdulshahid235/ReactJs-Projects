@@ -1,10 +1,11 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import "../timeline.css";
 
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
-  return (
+  return ReactDOM.createPortal(
     <div className="modal-overlay">
       <div className="modal-content">
         <button className="modal-close-btn" onClick={onClose}>
@@ -12,7 +13,8 @@ const Modal = ({ isOpen, onClose, children }) => {
         </button>
         {children}
       </div>
-    </div>
+    </div>,
+    document.getElementById("portal")
   );
 };
 
