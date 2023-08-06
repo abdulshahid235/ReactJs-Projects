@@ -16,8 +16,8 @@ body {
   /* border-bottom: 1px solid black; */
   height: 60px;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
-  background-color: black;
-  color: whitesmoke;
+  background-color: whitesmoke;
+  color: black;
   position: fixed;
   z-index: 9999;
 }
@@ -25,7 +25,7 @@ body {
 .header > p {
   padding: 0px 20px 0px 20px;
   text-decoration: none;
-  color: whitesmoke;
+  color: black;
   cursor: pointer;
 }
 
@@ -84,7 +84,7 @@ body {
 }
 
 .work-experience {
-  margin-top: 50px;
+  margin-top: 100px;
   width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -104,6 +104,20 @@ body {
   display: flex;
 }
 
+.contact-details {
+  margin-top: 100px;
+  /* text-align: center; */
+}
+
+.contact-details > h1 {
+  text-align: center;
+}
+.reach-me {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
 .details > h4 {
   margin: 0;
   padding-left: 10px;
@@ -124,4 +138,40 @@ body {
   height: 40px;
   /* width: 60px; */
   padding: 0px 20px 0px 20px;
+}
+
+/* Styles for the container */
+.blob-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+/* Styles for the SVG shape */
+.blob-shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover; /* Adjust as needed to control the SVG shape's appearance */
+}
+
+/* Styles for the foreground image */
+.foreground-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100%; */
+  width: 300px;
+  height: 100%;
+  object-fit: cover; /* Adjust as needed to control the foreground image's appearance */
+}
+
+.svg {
+  align-items: center;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -5,12 +5,14 @@ import Footer from "./components/footer";
 import SkillSet from "./components/SkillSet";
 import WorkExperience from "./components/WorkExperience";
 import ReachMe from "./components/ReachMe";
+import SVG from "./components/SVG";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Home />
+      {/* <SVG /> */}
       <SkillSet />
       <WorkExperience />
       <ReachMe />
